@@ -1,0 +1,116 @@
+:root {
+  --color_1: #212529;
+  --color_2: #cddc39;
+  --color_3: #fff;
+  --color_4: #acbcd423;
+  --color_5: #697992;
+  --shadow_color_5: 0px -6px 9px 0px #5c6a80;
+  --color_6: #3c4c68ab;
+  --color_7: #697992db;
+  --color_8: #dbdbdb;
+  --color_9: #3c4c68;
+  --shadow_color_9: 0px 0px 17px 6px #38465f;
+  --color_10: #212c41a8;
+  --shadow_button: 0 0 0 0.25rem #cddc39cf;
+
+  --text-font: "Roboto", sans-serif;
+}
+
+body {
+  font-family: var(--text-font);
+  background-color: var(--color_1);
+  scroll-behavior: smooth;
+}
+
+.favoritos{
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.favoritos .contenedor-principal{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.favoritos .contenedor-principal .flecha-izquierda,
+.favoritos .contenedor-principal .flecha-derecha{
+  position: absolute;
+  border: none;
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 40px;
+  height: 50%;
+  height: calc(50%-25%);
+  line-height: 40px;
+  width: 50px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 500;
+  transition: .2s ease all;
+}
+
+.favoritos .contenedor-principal .flecha-izquierda:hover,
+.favoritos .contenedor-principal .flecha-derecha:hover{
+  background: rgba(0, 0, 0, .9);
+}
+
+.favoritos .contenedor-principal .flecha-izquierda{
+  left: 0;
+}
+
+.favoritos .contenedor-principal .flecha-derecha{
+  right: 0;
+}
+
+.w-imagen{
+  width: 375px;
+  height: auto;
+}
+
+.favoritos .contenedor-carousel{
+  width: 100%;
+  padding: 20px 0;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.favoritos .contenedor-carousel .carousel{
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.favoritos .contenedor-carousel .carousel .imagen{
+  min-width: 35%;
+  transition: .3s ease all;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
+}
+
+.favoritos .contenedor-carousel .carousel .imagen.hover{
+  transform: scale(1.2);
+  transform-origin: center;
+}
+
+.favoritos .contenedor-carousel .carousel .imagen .img{
+  width: 100%;
+  vertical-align: top;
+}
+
+.style-card{
+  width: 22rem;
+  margin-bottom: 30px;
+  margin-left: 21px;
+}
+
+@media screen and (max-width:800px){
+  .favoritos .contenedor-carousel{
+    overflow: visible;
+  }
+  .favoritos .contenedor-carousel .carousel{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .favoritos .flecha-izquierda,
+  .favoritos .flecha-derecha{
+    display: none;
+  }
+}
